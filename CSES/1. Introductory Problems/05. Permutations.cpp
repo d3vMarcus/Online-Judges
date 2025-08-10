@@ -11,6 +11,10 @@
 using namespace std;
 typedef vector<int> vi;
 typedef vector<vi> matrix;
+
+/*
+ A ideia é gerar primeiro todos os números pares e depois gerar todos os números ímpares, ou vice e versa, pois sempre a diferença entre eles será maior que 1.
+ */
  
 int main()
 {
