@@ -33,3 +33,17 @@ int main()
 
     return 0;
 }
+
+// O código acima resolve o problema, mas é mais complexo que a solução a seguir, e a outra solução tem mais a ver com sorting e searching que a acima
+
+void solve()
+{
+    int n; cin>>n;
+    vector<int> v(n); for(auto& x : v) cin>>x;
+    sort(all(v));
+
+    v.erase(unique(all(v)), v.end()); // Unique reorganiza tirando repetidos consecutivos(devido isso precisamos usar sort) deixando apenas 1, e retornando um iterador para o inicio de onde estão os repetidos.
+
+    cout<<sz(v)<<endl;
+}
+
