@@ -16,7 +16,7 @@ typedef unsigned long long ull;
 const int M = 1e9 + 7;
 
 /*
-    A solução é o maior valor entre tirar todos os iguais a K ou tirar todos os elementos menores que K.
+    A solução é o maior valor entre tirar todos os iguais a K ou colocar todos os elementos menores que K.
 
     é o max porque da pra fazer as duas coisas ao mesmo tempo, tipo se k = 4 em [1, 2, 4, 5, 5]
 
