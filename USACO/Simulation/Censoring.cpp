@@ -23,7 +23,8 @@ const int MOD = 1e9 + 7;
 /*
 
 Temos que usar uma string auxiliar para receber cada char da string S e colocar um por vez, e verificar se é válido a sequência de caracteres. 
-O que é a verificação: Se o tamanho de aux >= T e se os últimos sz(T) caracteres de aux forem iguais a T, tiramos os últimos sz(T) caracteres, como fica isso: aux.resize(sz(aux)-sz(T)) -> tiramos os sz(T) últimos caracteres. 
+O que é a verificação: Se o tamanho de aux >= T e se os últimos sz(T) caracteres de aux forem iguais a T, tiramos os últimos sz(T) caracteres, 
+como fica isso: aux.resize(sz(aux)-sz(T)) -> tiramos os sz(T) últimos caracteres. 
 
 */
 
