@@ -44,7 +44,7 @@ int main()
     for (auto x : s) {
         aux.pb(x);
 
-        if (sz(ans) >= sz(t) && aux.substr(sz(aux)-sz(t)) == t) {
+        if (sz(aux) >= sz(t) && aux.substr(sz(aux)-sz(t)) == t) {
             aux.resize(sz(aux)-sz(t));
         }
     }
