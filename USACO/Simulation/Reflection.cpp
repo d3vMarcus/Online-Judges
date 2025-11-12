@@ -20,6 +20,18 @@ typedef unsigned long long ull;
 typedef pair<int, int> ii;
 const int MOD = 1e9 + 7;
 
+/*
+O maior desafio é calcular o custo mínimo e atualizá-lo a cada mudança, para isso faremos uma função para calcular esse custo.
+Percorremos apenas um quadrante dessa matriz, e usaremos relações nos índices para pegar a célula no respectivo quadrante refletido.
+As relações são ( i , j ), (i, n - 1 - j ),( n - 1 - i, j ), ( n - 1 - i, n - 1 - j).
+Na função precisamos apenas verificar se cada um desses índices são iguais a #, exemplo poderia ser . sem problema,
+Com isso retornamos o mínimo entre a quantidade de # ou 4 - essa diferença, que representa a quantidade mínima de operações para chegar no outro caso.
+Agora para as atualizações lemos r e c e verificamos em qual quadrante eles estão, e transformá-los para o quadrante em que estamos iterando, pois escolhemos algum,
+no meu caso escolhi o quadrante superior esquerdo, logo ele recebe o min(r, n-1-r) e min(c, n-1-c).
+Com isso, tiramos o custo atual desse quadrante do total, total  = total - custo(r, c), atualizamos a matriz com os updates e depois colocamos de volta o novo custo.
+
+*/
+
 int cost(int n, vector<string>& v, int r, int c) {
 
     int mn = 0;
