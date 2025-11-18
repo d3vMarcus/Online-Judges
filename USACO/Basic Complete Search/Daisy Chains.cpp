@@ -21,7 +21,7 @@ typedef pair<int, int> ii;
 const int MOD = 1e9 + 7;
 
 /*
-Truque: Não desconsiderar a parte decimal em certas comparações.
+Truque: Não desconsiderar a parte decimal em divisões, ou transformar em produto invés de mexer com double.
 */
 
 int main() {
@@ -44,7 +44,7 @@ int main() {
                 sum += v[k];
 
             for (int k = i; k <= j; k++)
-                if ((double)((double)sum/(j-i+1)) == (double)(v[k])) {
+                if ((double)((double)sum/(j-i+1)) == (double)(v[k])) { // pode ser tambem -> sum == v[k] * (j-i-1) para não precisar mexer com double.
                     ans++;
                     break;
                 }
