@@ -50,8 +50,8 @@ int main() {
 
     for (int i = 0; i < k; i++) {
         for (int j = 0; j < n-1; j++) {
-            for (int k = j+1; k < n; k++) {
-                mp[{v[i][j], v[i][k]}]++;
+            for (int u = j+1; u < n; k++) {
+                mp[{v[i][j], v[i][u]}]++;
             }
         }
     }
