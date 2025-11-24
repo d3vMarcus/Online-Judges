@@ -33,6 +33,8 @@ A:    |---|
 com isso, guardamos os index da primeira aparição e da segunda em vetores diferentes e iteramos
 por S e verificamos se atende as condições do intervalo.
 
+Truques e aprendizados: Usar vetores para guardar alguma certa informação, nesse caso os index de entrada e saida em vetores diferentes.
+
 */
 
 int main() {
@@ -44,23 +46,22 @@ int main() {
 
     string s; cin>>s;
 
-    vi fi(26, -1), se(26, -1);
-    for (int i = 0; i < 52; i++) {
-        int u = s[i] - 'A';
-        if (fi[u] == -1)
-            fi[u] = i;
+    vi in(26, -1), out(26, -1);
+
+    for(int i = 0; i < 52; i++){
+        int j = s[i] - 'A';
+
+        if(in[j] == -1)
+            in[j] = i;
         else
-            se[u] = i;
+            out[j] = i;
     }
 
-    int ans =  0;
+    int ans = 0;
 
-    for (int i = 0; i < 26; i++) {
-        for (int j = i+1; j < 26; j++) {
-            int x1 = fi[i], y1 = fi[j];
-            int x2 = se[i], y2 = se[j];
-
-            if ((y1 > x1 && x2 > y1 && y2 > x2) || (x1 > y1 && y1 > x2 && x2 > y2))
+    for(int i = 0; i < 26; i++){
+        for(int j = i+1; j < 26; j++){
+            if((in[i] < in[j] && out[i] > in[j] && out[j] > out[i]) || (in[j] < in[i] && out[j] > in[i] && out[i] > out[j]))
                 ans++;
         }
     }
